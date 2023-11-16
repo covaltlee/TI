@@ -251,7 +251,7 @@ if __name__ == '__main__':
     import re 
     import gensim
     
-    corpus = data_input['TAF']
+    corpus = data_input['TAF'].dropna()
     # python -m spacy download en_core_web_sm
     
     # p1) removing speical character(optional)
