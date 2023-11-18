@@ -114,9 +114,9 @@ def wisdomain_prep(data) :
     data['applicants'] = applicants_list
     
     
-    # applicant_rep_list = data['applicant_rep'].apply(lambda x : x.lower() if str(x) != 'nan' else x)
-    # applicant_rep_list = prep_applicant_rep(applicant_rep_list)
-    # data['applicant_rep'] = applicant_rep_list
+    applicant_rep_list = data['applicants'].apply(lambda x : x[0].lower() if str(x) != 'nan' else x)
+    applicant_rep_list = prep_applicant_rep(applicant_rep_list)
+    data['applicant_rep'] = applicant_rep_list
     
     data['inventor'] = data['inventor'].apply(lambda x : [i.lower() for i in x] if str(x) != 'nan' else x)
     
