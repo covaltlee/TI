@@ -260,6 +260,7 @@ if __name__ == '__main__':
     # p2) change type 2 nlp
     nlp = spacy.load("en_core_web_sm")
     
+    data_.dropna(subset=['TAF'], inplace=True)
     data_['TAF_nlp'] = [nlp(i) for i in corpus]
     
     #%% 4. LDA 적합
