@@ -84,7 +84,8 @@ def wisdomain_prep(data) :
     
     data['year_application'] = data['date_application'].apply(lambda x : int(x.split('.')[0]) if str(x) != 'nan'  else x)
     
-    data['TA'] = data['title'] + '. ' + data['abstract']
+    data.dropna(subset=['title'], inplace=True)
+    data['TA'] = data.apply(lambda x: x.title + '. ' + x.abstract if (str(x.abstract)!='nan') else x.title, axis=1)
     data['TAF'] = data.apply(lambda x: x.TA + '. ' + x.claims_rep if (str(x.claims_rep) != 'nan') else x.TA, axis= 1)
     
     data.dropna(subset=['CPC'], inplace=True)

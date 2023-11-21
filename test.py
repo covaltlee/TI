@@ -25,8 +25,8 @@ if __name__ == '__main__':
     
     # load data
     directory += '/input/'
-    file_name = '20231116214404369'
-    data = pd.read_excel(directory+ file_name+ '.xls',  header = 7)
+    file_name = 'data'
+    data = pd.read_excel(directory+ file_name+ '.xlsx')
     
     data['file_name'] = file_name
     
@@ -333,3 +333,4 @@ if __name__ == '__main__':
     
     
     
+# %%
